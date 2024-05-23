@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Harita Uygulaması</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-measure/dist/leaflet-measure.css">
+    <link rel="stylesheet" href="noktatanimlamastyle.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-measure/dist/leaflet-measure.js"></script>
+    <script src="https://unpkg.com/leaflet-polylinedecorator/dist/leaflet.polylineDecorator.js"></script>
+</head>
+<body>
+    <div id="mapid"></div>
+    <div class="control-panel">
+        <h3>Manuel Koordinat Girişi</h3>
+        <input type="file" id="fileInput" accept=".xlsx">
+        <button id="fileInputButton">Excel'den Yükle</button>
+        <input type="number" id="latitude" placeholder="Enlem" step="0.00001">
+        <input type="number" id="longitude" placeholder="Boylam" step="0.00001">
+        <select id="manualType">
+            <option value="hedef">Hedef</option>
+            <option value="mevzii">Mevzii</option>
+            <option value="kisitlama">Kısıtlama</option>
+        </select>
+        <input type="text" id="manualLabel" placeholder="Etiket">
+        <button id="addManualMarkerBtn">Ekle</button>
+        <button id="deleteMarkerBtn">Son İşareti Sil</button>
+        <button id="exportButton">Excel'e Aktar</button>
+        <button id="drawArrowsBtn">Okları Çiz</button>
+        <button id="clearArrowsBtn">Okları Temizle</button>
+        <select id="targetSelection">
+            <option value="">Hedef Seçiniz</option>
+        </select>
+        <button onclick="window.analyzeTargets()">Analiz Et</button>
+        <button id="clearResultsBtn">Analiz Görsellerini Temizle</button>
+        <button id="analyzeButton">Mevzi Önceliklendirmesi Yap</button>
+    </div>
+    <div class="criteria-panel">
+        <h3>Kriter Ağırlıklarını Belirleyin</h3>
+        <label>Maliyet (-): <input type="number" id="costWeight" step="0.01" value="0.25"></label>
+        <label>Menzil (-): <input type="number" id="rangeWeight" step="0.01" value="0.25"></label>
+        <label>Etkinlik Skoru (+): <input type="number" id="effectivenessWeight" step="0.01" value="0.25"></label>
+        <label>Atış Hızı (+): <input type="number" id="fireRateWeight" step="0.01" value="0.25"></label>
+        <button id="updateCriteriaBtn">Kriterleri Güncelle</button>
+    </div>
+    <div id="results"></div>
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="noktascript22.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+#mapid {
+    height: 85vh;
+    width: 100%;
+}
+.control-panel {
+    padding: 20px;
+    background: #f4f4f4;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+input, select, button {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    background-color: #0084ff;
+    color: white;
+    font-weight: bold;
+}
+button:hover {
+    background-color: #0056b3;
+}
+.criteria-panel {
+    padding: 20px;
+    background: #f4f4f4;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-top: 20px;
+}
+.criteria-panel label {
+    display: block;
+    margin: 10px 0;
+}
+.arrow-head {
+    fill-opacity: 0.7;
+    fill: #f00;
+}
+
+.criteria-panel {
+    padding: 20px;
+    background: #f4f4f4;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-top: 20px;
+}
+.criteria-panel label {
+    display: block;
+    margin: 10px 0;
+}
